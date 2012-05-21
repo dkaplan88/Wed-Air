@@ -17,7 +17,8 @@ if Rails.env.development?
     # Flight.create :number => flight_number
     #               :departure => from, 
     #               :arrival => to, 
-    #               :departs_at => (Date.today + departure_time.hours)
+    #               :departs_at => (Date.today + departure_time.hours),
+    :miles => MileageCalculator
   end
   
 end
