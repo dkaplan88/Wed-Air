@@ -25,8 +25,8 @@ This app will require us to use most of the essential elements of the Rails fram
    schedule.  None of the links or buttons work, except for the "Help" link.
 
 2. Read the code that's already there.
-* Find out how the mockup is being shown.  
-* Find the controllers, views, and stylesheets.
+   - Find out how the mockup is being shown.  
+   - Find the controllers, views, and stylesheets.
 
 3. Our goal is to transform the mockup into a live, database-backed Rails application.
 
