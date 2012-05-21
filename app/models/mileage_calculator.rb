@@ -12,7 +12,13 @@ class MileageCalculator
   end
   
   def miles
-    
+    chart_key = "#{@departure_airport_code}-#{@arrival_airport_code}"
+    miles = CHART[chart_key]
+    if miles.nil?
+      chart_key = "#{@arrival_airport_code}-#{@departure_airport_code}"
+      miles = CHART[chart_key]
+    end
+    return miles
   end
   
   def duration
