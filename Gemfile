@@ -15,6 +15,7 @@ end
 
 group :test do
   gem 'sqlite3'
+  gem 'minitest-rg'
 end
 
 # Gems used only for assets and not required
