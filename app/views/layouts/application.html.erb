@@ -22,6 +22,10 @@
 		</header>
 
 		<div id="content">
+			<% if flash[:notice].present? %>
+				<p id="notice"><%= flash[:notice] %></p>
+			<% end %>
+			
 			<%= yield %>
 		</div>
 		

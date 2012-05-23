@@ -1,5 +1,7 @@
 Air::Application.routes.draw do
   
+  resources :users
+
   get "/flights" => "flights#index"
 
   root to: 'flights#index'
