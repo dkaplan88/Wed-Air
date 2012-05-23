@@ -1,0 +1,17 @@
+<%= form_for @r do |r|  %>
+	<%= r.label "Name" %>
+	<%= r.text_field current.name %>
+	
+<p>
+  <%= r.label :date   %>
+  <%= r.date_select :date, :order => [:month,:day,:year] %>
+</p>
+
+<p>
+	<%= r.label :card %>
+	<%= r.text_field :card %>
+<p>
+  <%= r.submit "Submit" %>
+</p>
+
+<% end %>
