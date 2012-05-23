@@ -16,15 +16,11 @@
 </p>
 
 <p>
-  <b>Password digest:</b>
-  <%= @user.password_digest %>
+  <b>Frequent Flyer Points:</b>
+  <% if @user.miles == nil %>
+  0 Miles Earned
+  <% else %>
+  <%= @user.miles %> Miles Earned 
+  <% end %>
 </p>
 
-<p>
-  <b>Miles:</b>
-  <%= @user.miles %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
