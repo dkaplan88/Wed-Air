@@ -5,8 +5,7 @@ Air::Application.routes.draw do
 
   resources :users
 
-  get "/flights" => "flights#index"
-
+  resources :flights, only: [:index, :show]
   root to: 'flights#index'
   
   get '/mockup' => 'pages#home', :as => :mockup

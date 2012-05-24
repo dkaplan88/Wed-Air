@@ -1,10 +1,12 @@
+<h1>Make A Reservation Now!</h1>
+
 <%= form_for @r do |r|  %>	
 <p>
 		<%= r.hidden_field :user_id, {:value => session[:login]} %>
 </p>
 
 <p>
-	<%= r.hidden_field :flight_id, {:value => @flights} %>
+	<%= r.hidden_field :flight_id, {:value => @f.id} %>
 </p>
 
 <p>

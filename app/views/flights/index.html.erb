@@ -16,15 +16,18 @@
   <tbody>
     <% @flights.each do |flight| %>
       <tr>
-		<% if session[:login] %>
-       <% if flight.seats == 0 %>
-        <td>SOLD OUT!!</td>
-       <% else %>
-        <td><button><%= link_to "Book Now", new_reservation_url(flight) %></button></td>
-			<% end %> 
-		<% else %>
-		<td>Sign In to Book</td>
-		<% end %>
+				<% if session[:login] %>
+       		<% if flight.seats == 0 %>
+        		<td>SOLD OUT!!</td>
+       		<% else %>
+						<% f = flight.id %>
+        			<td><button><%= link_to "Book Now", flight_url(f) %></button></td>
+				  <% end %> 
+			<% elsif flight.seats == 0 %>
+				<td>SOLD OUT!!</td>
+			<% else %>
+				<td>Sign In To Book</td>
+			<% end %>
 		
         <td><%= flight.number %></td>
         <td><%= flight.departure_airport_code %></td>
