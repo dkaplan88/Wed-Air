@@ -7,6 +7,8 @@ class ReservationsController < ApplicationController
   
   def create
     if @r = Reservation.create(params[:reservation])
+      @r.flight.seats = @r.flight.seats - 1
+      @r.flight.save
       if @r.user.miles == nil
         @r.user.miles = @r.flight.distance
         @r.user.save
