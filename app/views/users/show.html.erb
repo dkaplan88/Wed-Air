@@ -17,7 +17,7 @@
 
 <p>
 	<b>Reservations:</b>
-	<% @reservation.each do |p| %>
+	<% @user.reservations.each do |p| %>
 	<p>Your Flight is Leaving on <%= p.date %> from <%= p.flight.departure_airport_code %> and is going to <%= p.flight.arrival_airport_code %>! Have a Safe Flight! You have earned <%= p.flight.distance %> Miles for this Flight!</p><br>
 	<% end %>
 

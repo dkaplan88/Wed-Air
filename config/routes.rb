@@ -2,7 +2,6 @@ Air::Application.routes.draw do
   
   resources :reservations
   resources :sessions, only: [:new,:create]
-
   resources :users
 
   resources :flights, only: [:index, :show]
