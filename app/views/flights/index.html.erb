@@ -33,7 +33,7 @@
         <td><%= flight.departure_airport_code %></td>
         <td><%= flight.departs_at.strftime("%l:%M %P") %></td>
         <td><%= flight.arrival_airport_code %></td>
-        <td><%#= flight.arrives_at %></td>
+        <td><%= flight.arrives_at.strftime("%l:%M %P") %></td>
         <td><%= flight.seats %></td>
          <td><%= flight.distance %></td>
       </tr>

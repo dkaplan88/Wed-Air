@@ -18,9 +18,10 @@
 <table>
 		<tr>
 			<th>Date</th>
-			<th>Time</th>
+			<th>Departure Time</th>
 			<th>Departure Airport</th>
 			<th>Arrival Airport</th>
+			<th>Arrival Time</th>
 			<th>Miles Earned</th>
 		</tr>
 	<% @user.reservations.each do |p| %>
@@ -29,6 +30,7 @@
 			<td><%= p.flight.departs_at.strftime("%l:%M %P") %></td> 
 			<td><%= p.flight.departure_airport_code %></td>
 			<td><%= p.flight.arrival_airport_code %></td>
+			<td><%= p.flight.arrives_at.strftime("%l:%M %P") %></td>
 			<td><%= p.flight.distance %></td>
 		</tr>
 	<% end %>

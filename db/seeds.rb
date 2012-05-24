@@ -20,6 +20,7 @@ if Rails.env.development?
                   :departs_at => (Date.today + departure_time.hours + departure_time.minutes),
                   :seats => rand(0..60)
     f.calculate
+    f.arrives 
     f.save
   end
   
