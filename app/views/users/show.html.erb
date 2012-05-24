@@ -14,14 +14,26 @@
   <b>Email:</b>
   <%= @user.email %>
 </p>
-
-<p>
 	<b>Reservations:</b>
+<table>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Departure Airport</th>
+			<th>Arrival Airport</th>
+			<th>Miles Earned</th>
+		</tr>
 	<% @user.reservations.each do |p| %>
-	<p>Your Flight is Leaving on <%= p.date %> from <%= p.flight.departure_airport_code %> and is going to <%= p.flight.arrival_airport_code %>! Have a Safe Flight! You have earned <%= p.flight.distance %> Miles for this Flight!</p><br>
+		<tr>
+			<td><%= p.date %></td> 
+			<td><%= p.flight.departs_at.strftime("%l:%M %P") %></td> 
+			<td><%= p.flight.departure_airport_code %></td>
+			<td><%= p.flight.arrival_airport_code %></td>
+			<td><%= p.flight.distance %></td>
+		</tr>
 	<% end %>
-
-<p>
+	</table>
+	<br>
   <b>Frequent Flyer Points:</b>
 	<%= @user.miles %> Miles
 </p>
