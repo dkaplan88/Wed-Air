@@ -14,9 +14,9 @@ class ReservationsController < ApplicationController
         @r.user.save
         redirect_to root_url, notice: "Booked It!"
       else
-      @r.user.miles = @r.flight.distance + @r.user.miles 
-      @r.user.save
-      redirect_to root_url, notice: "Booked It"
+        @r.user.miles = @r.flight.distance + @r.user.miles 
+        @r.user.save
+        redirect_to root_url, notice: "Booked It"
     end
     else 
       redirect_to root_url notice: "Flight Not Booked :("
