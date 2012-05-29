@@ -1,9 +1,10 @@
 class ReservationsController < ApplicationController
   
-  # def new
-  #    @r = Reservation.new
-  #    @f = Flight.find_by_id(params[:id])
-  #  end
+  def new
+      @r = Reservation.new
+      @r.flight = Flight.find(params[:flight_id])
+      
+  end
   
   def create
     if @r = Reservation.create(params[:reservation])

@@ -24,14 +24,16 @@
 			<th>Arrival Time</th>
 			<th>Miles Earned</th>
 		</tr>
-	<% @user.reservations.each do |p| %>
+	<% @user.flights.each do |p| %>
 		<tr>
-			<td><%= p.date %></td> 
-			<td><%= p.flight.departs_at.strftime("%l:%M %P") %></td> 
-			<td><%= p.flight.departure_airport_code %></td>
-			<td><%= p.flight.arrival_airport_code %></td>
-			<td><%= p.flight.arrives_at.strftime("%l:%M %P") %></td>
-			<td><%= p.flight.distance %></td>
+		<% p.reservations.each do |p| %>
+			<td><%= p.date %></td>
+		<% end %>
+			<td><%= p.departs_at.strftime("%l:%M %P") %></td> 
+			<td><%= p.departure_airport_code %></td>
+			<td><%= p.arrival_airport_code %></td>
+			<td><%= p.arrives_at.strftime("%l:%M %P") %></td>
+			<td><%= p.distance %></td>
 		</tr>
 	<% end %>
 	</table>
